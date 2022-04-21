@@ -1,0 +1,63 @@
+/*
+Vars
+*/
+// "New Castle Brown Ale Colour Palette"
+// By "https://www.colourlovers.com/palette/102432/Newcastle_Brown_Ale"
+$poachedIvory: #D8D8C0;
+$meatball: #904830;
+$puttingDownRoots: #783030;
+$defaultWhite: #FFFFFF;
+$primary: #ffb535;
+$primaryTextColor: #363738;
+
+/*
+Mixins
+*/
+
+@mixin translateY($e) {
+    -webkit-transform: translateY($e);
+        -moz-transform: translateY($e);
+            transform: translateY($e);
+}
+
+@mixin transition($e) {
+    -webkit-transition:$e;
+        -moz-transition:$e;
+            transform:$e;
+}
+
+
+/* Fonts - 
+
+regular 400
+regular 400 Italic
+bold 700
+bold 700 Italic
+
+*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: $primaryTextColor;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    @include transition(.4s ease-in-out);
+    cursor: pointer;
+
+    &:hover {
+        font-weight: 500;
+        @include transition(.4s ease-in-out);
+    }
+}
+
+
+
+.container-fluid {
+    line-height: 24px;
+
+}

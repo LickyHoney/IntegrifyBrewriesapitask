@@ -1,0 +1,95 @@
+@import "_config.scss";
+
+header {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: $meatball;
+
+    height: 90px;
+   
+    .header-text {
+        position: relative;
+        top: 50%; left: 15px;
+        width: 216px;
+        height: 80px;
+        @include translateY(-50%);
+    }
+
+
+
+    nav,
+    nav u1,
+    nav u1 li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav {
+        position: absolute;
+        top: 50%; right: 15px;
+        @include translateY(-50%);
+
+        ul li {
+            
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        &.last {
+            list-style: none;
+            margin: 0;
+        }
+
+        a {
+            font-size: 19px;
+            line-height: normal;
+            color: $defaultWhite;
+            &:hover{
+                color: $defaultWhite;
+            }
+        }
+
+
+    }
+    
+    
+}
+
+
+    .map-error-block {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: $defaultWhite;
+    height: 15px;
+
+    .error-text {
+        position: relative;
+        font-family: 'Open-Sans', sans-serif;
+        color: red;
+        font-size: 15px;
+        font-weight: bolder;
+        top: 50%; left: 15px;
+        @include translateY(-50%);
+    }
+    }
+
+    .back-to-main-block {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 35px;
+    background: $defaultWhite;
+    
+    .back-to-main-text {
+        position: relative;
+        font-family: 'Open-Sans', sans-serif;
+        color: $meatball;
+        font-size: 20px;
+        top: 50%; left: 15px;
+        display: inline-block;
+        @include translateY(-50%);
+    }
+    }

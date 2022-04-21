@@ -1,0 +1,112 @@
+@import "_config.scss";
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $poachedIvory;
+}
+
+.app-card-list {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  min-height: 75vh;
+  white-space: normal;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    width: 100%;
+    white-space: wrap;
+    margin-top: 0;
+  }
+
+  .card {
+    width: 500px;
+    margin: 20px 30px;
+    display: inline-block;
+    transition: 0.25s;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+ 
+
+  .card-footer {
+    padding: .75rem 1.25rem;
+    background-color: #bebe48;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    min-width: 100%;
+    margin-top: auto;
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .card-body {
+    padding: 15px;
+    background-color: #fff;
+    width: 100%;
+
+    .card-title {
+      text-transform: uppercase;
+      width: 100%;
+      font-size: 20px;
+      font-weight: 1000;
+      color: $meatball;
+    }
+  }
+}
+.cart {
+  div,
+  span {
+    font-family: "Open-Sans", sans-serif;
+    font-size: 15px;
+    position: relative;
+    margin-top: -4px;
+    font-weight: bold;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      color: $meatball;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+  .collapse {
+    display: none;
+  }
+
+  .collapse.in {
+    display: block;
+  }
+}
+.btn {
+  background: white;
+  color: $primaryTextColor;
+  font-weight: bold;
+  outline: none;
+  overflow: hidden;
+  border-radius: 0;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 0;
+  border: none;
+  &:focus {
+    box-shadow: none;
+  }
+  &:hover {
+    background: $meatball;
+    color: $defaultWhite;
+  }
+}
