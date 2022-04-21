@@ -1,6 +1,6 @@
 # Brewery ReactJS Project
 ## Introduction
-The aim of this assignment is to display Breweries data in the cardS format and their detail page using Breweries API in a meaningful way.  
+The aim of this assignment is to display Breweries data in the cards format and their detail page using Breweries API in a meaningful way.  
 
 ## Technologies
 - ReactJs
