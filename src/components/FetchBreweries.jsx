@@ -11,28 +11,33 @@ import { fetchSearchResults } from "../util";
 const API = 'https://api.openbrewerydb.org/breweries?';
 
 
-const fetchData = async (query, cb) => {
-  console.warn('fetching ' + query);
-  const res = await fetchSearchResults(query);
-  cb(res);
-};
 
-const debouncedFetchData = debounce((query, cb) => {
-  fetchData(query, cb);
-}, 500);
+
+
 
 
 const FetchBreweries = props => {
   const [breweries, setBreweries] = useState([]);
   let [search, setSearch] = useState("");
-  const handleChange = event => {
+ /* const handleChange = event => {
     setSearch(event.target.value);
-  };
+  };*/
   useEffect(() => {
     
     axios.get(API).then(res => {
       console.log(res);
-      setBreweries(res.data);
+      
+      const results = res.data.filter(beer =>
+        (JSON.stringify(beer).toLowerCase().includes(search.toLocaleLowerCase())
+    
+    
+        )
+        );
+      
+
+
+
+      setBreweries(results);
     });
 
   
@@ -68,7 +73,7 @@ const FetchBreweries = props => {
     
         <div className="app-card-list" id="app-card-list">
           
-          {breweries.map(brewery => <Card key={brewery.name.toString()} name={brewery.name} type={brewery.brewery_type} city={brewery.city} street={brewery.street} address_2={brewery.address_2} address_3={brewery.address_3} state={brewery.state} country_province={brewery.country_province} postal_code={brewery.postal_code} address={brewery.street + " " + brewery.city + ", " + brewery.state + " " + brewery.postal_code} website={brewery.website_url} longitude={brewery.longitude} latitude={brewery.latitude} />)}{" "}
+          {breweries.map(brewery => <Card key={brewery.id} id={brewery.id} name={brewery.name} type={brewery.brewery_type} city={brewery.city} street={brewery.street} address_2={brewery.address_2} address_3={brewery.address_3} state={brewery.state} country_province={brewery.country_province} postal_code={brewery.postal_code} address={brewery.street + " " + brewery.city + ", " + brewery.state + " " + brewery.postal_code} website={brewery.website_url} longitude={brewery.longitude} latitude={brewery.latitude} />)}{" "}
         </div>
        
       </div>;

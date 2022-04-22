@@ -5,9 +5,9 @@ import CardDetails from "./cardComponent/cardDetails.jsx";
 import Modal from "@material-ui/core/Modal";
 import { DialogContent } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useParams } from "react-router-dom";
 
-
-const API = 'https://api.openbrewerydb.org/breweries?';
+const API = 'https://api.openbrewerydb.org/breweries';
 
 
  function rand() {
@@ -38,12 +38,18 @@ const API = 'https://api.openbrewerydb.org/breweries?';
 const FetchBreweryDetail = (props) => {
     
   const [breweries, setBreweries] = useState([]);
+  const { id } = useParams();
   
   
   useEffect(() => {
-    axios.get(API).then(res => {
+    debugger;
+    
+    //let id = window.location.pathname.split('/detail/').length>1?window.location.pathname.split('/detail/')[1]:'n/a'
+    let path = API+'/'+ id;
+    
+    axios.get(path).then(res => {
       console.log(res);
-      setBreweries(res.data);
+      setBreweries([res.data]);
     });
   }, []);
   

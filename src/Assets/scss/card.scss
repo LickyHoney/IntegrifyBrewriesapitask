@@ -32,6 +32,19 @@ body {
     }
   }
 
+  .card-detail{
+    width: 500px;
+    margin: 20px 30px;
+    display: inline-block;
+    transition: 0.25s;
+
+    &:hover {
+      cursor: pointer;
+    }
+    margin-left: 50%;
+    margin-top: 30%;
+  }
+
  
 
   .card-footer {

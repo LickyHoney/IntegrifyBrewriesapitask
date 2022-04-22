@@ -18,7 +18,7 @@ const Detail = props => {
         
         <div id="demo" >
         <h5 class="card-title">{props.name}</h5>
-          <div>
+          <div className="card-list-detail">
             <li>name: {props.name}</li>
             <li>brewery_type: {props.type}</li>
             <li>street: {props.street}</li>

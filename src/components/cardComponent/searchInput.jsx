@@ -3,7 +3,7 @@
 // import SearchBar from "material-ui-search-bar";
 
 
-// const SearchBrewery = props => {
+// const SearchInput = props => {
    
  
 //   return <div className="search">
@@ -25,7 +25,7 @@
 //       </div>;
 // };
 
-// export default SearchBrewery;
+// export default SearchInput;
 
 import React from 'react';
 
@@ -42,10 +42,11 @@ const SearchInput = ({ value, onChangeText }) => {
         type="text"
         value={value}
         onChange={onChangeText}
-        placeholder="Search beer by name"
+        placeholder="Search brewery"
       />
     </div>
   );
 };
 
 export default SearchInput;
+

@@ -18,7 +18,7 @@ const CardBody = props => {
           Find Out More
         </button> */}
         <div id="demo" >
-          <div>
+          <div className="card-list">
             <li>Name: {props.name}</li>
             <li>Type: {props.type}</li>
             <li>City: {props.city}</li>
@@ -43,14 +43,7 @@ const CardBody = props => {
         </div>
         <div class="card-footer">
         
-          <Link
-               to={{
-                pathname: `/detail`
-               
-              }}
-            >
-              <span>View</span>
-            </Link>
+        <Link to={`/detail/${props.id}`}>View Detail</Link>
                              
         </div>
       </div>;

@@ -6,7 +6,7 @@ import Detail from "./detail";
 
 
 const CardDetails = props => {
-  return <article className="card">
+  return <article className="card-detail">
         
 
         <div className="card-body">
