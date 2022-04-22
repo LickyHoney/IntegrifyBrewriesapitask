@@ -6,21 +6,10 @@ import Modal from "@material-ui/core/Modal";
 import { DialogContent } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-/**
- * API variable holds the link to the OpenBreweryAPI
- */
-const API = 'https://api.openbrewerydb.org/breweries?';
-/**
- * This query gather data by city and state for Hanover, PA
- */
-const DEFAULT_QUERY = 'by_city=Hanover&by_state=Pennsylvania';
 
-/**
- * A class that fetches Brewery data from OpenBreweryAPI then
- * makes a list of Card objects.
- *
- * @param state The state is set to an array of Brewery objects
- */
+const API = 'https://api.openbrewerydb.org/breweries?';
+
+
  function rand() {
     return Math.round(Math.random() * 20) - 10;
   }
@@ -47,15 +36,12 @@ const DEFAULT_QUERY = 'by_city=Hanover&by_state=Pennsylvania';
   }));
 
 const FetchBreweryDetail = (props) => {
-    const ref = React.createRef();
-    const classes = useStyles();
-    const [modalStyle] = React.useState(getModalStyle);
+    
   const [breweries, setBreweries] = useState([]);
-  const [isClicked, setIsClicked] = useState([]);
-  const [open, setOpen] = useState(false);
+  
   
   useEffect(() => {
-    axios.get(API + DEFAULT_QUERY).then(res => {
+    axios.get(API).then(res => {
       console.log(res);
       setBreweries(res.data);
     });

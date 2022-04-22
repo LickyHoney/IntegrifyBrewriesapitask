@@ -11,4 +11,17 @@ body{font-family:'Open Sans',sans-serif;font-size:18px;color:#363738;font-weight
     align-items: center;
     
   }
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .search-container input {
+    height: 32px;
+    width: 300px;
+    padding: 0px 12px 0px 12px;
+  }
+  
   
