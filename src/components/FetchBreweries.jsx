@@ -1,11 +1,8 @@
-import React, { Component, useState, useEffect } from "react";
+import React, {  useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./cardComponent/card";
-import CardDetails from "./cardComponent/cardDetails";
-import SearchBar from "material-ui-search-bar";
+
 import SearchInput from "./cardComponent/searchInput";
-import debounce from 'lodash.debounce';
-import { fetchSearchResults } from "../util";
 
 
 const API = 'https://api.openbrewerydb.org/breweries?';
@@ -19,9 +16,7 @@ const API = 'https://api.openbrewerydb.org/breweries?';
 const FetchBreweries = props => {
   const [breweries, setBreweries] = useState([]);
   let [search, setSearch] = useState("");
- /* const handleChange = event => {
-    setSearch(event.target.value);
-  };*/
+ 
   useEffect(() => {
     
     axios.get(API).then(res => {
@@ -44,26 +39,9 @@ const FetchBreweries = props => {
   }, [search]);
 
 
-  // const onChangeSearch = (e) => {
-
-  //   const val = e.target.value;
-
-  //   setSearch(val);
-
-  // }
 
   return <div className="container-fluid">
-    {/* <SearchBar
-        // ref={input}
-        // onChange={handleChange}
-        // onRequestSearch={handleClick}
-        value={search} 
-        onChange={onChangeSearch}
-        style={{
-          margin: "0 auto",
-          maxWidth: 800
-        }}
-      /> */}
+    
       <SearchInput
         value={search}
         onChangeText={e => {

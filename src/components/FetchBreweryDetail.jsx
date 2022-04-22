@@ -1,39 +1,18 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "./cardComponent/card";
+
 import CardDetails from "./cardComponent/cardDetails.jsx";
-import Modal from "@material-ui/core/Modal";
-import { DialogContent } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+
+
 import { useParams } from "react-router-dom";
 
 const API = 'https://api.openbrewerydb.org/breweries';
 
 
- function rand() {
-    return Math.round(Math.random() * 20) - 10;
-  }
- function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
-  
-    return {
-      top: `${top}%`,
-      left: `${left}%`,
-      transform: `translate(-${top}%, -${left}%)`
-    };
-  }
 
-  const useStyles = makeStyles((theme) => ({
-    paper: {
-      position: "absolute",
-      width: 400,
-      backgroundColor: theme.palette.background.paper,
-      border: "2px solid #000",
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3)
-    }
-  }));
+
+
+  
 
 const FetchBreweryDetail = (props) => {
     
@@ -44,14 +23,14 @@ const FetchBreweryDetail = (props) => {
   useEffect(() => {
     debugger;
     
-    //let id = window.location.pathname.split('/detail/').length>1?window.location.pathname.split('/detail/')[1]:'n/a'
+    
     let path = API+'/'+ id;
     
     axios.get(path).then(res => {
       console.log(res);
       setBreweries([res.data]);
     });
-  }, []);
+  }, );
   
 
   

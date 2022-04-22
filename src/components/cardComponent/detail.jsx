@@ -1,6 +1,7 @@
-import React, { Component, useState, useCallback } from "react";
+import React from "react";
 import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
+
 
 
 const Detail = props => {
@@ -27,9 +28,9 @@ const Detail = props => {
             <li>City: {props.city}</li>
           </div>
           <div class="card-footer">
-          <span onClick={handleClick}>
-        Go home
-       </span>
+          <Link onClick={handleClick}>
+        Go back
+       </Link>
     </div>
         </div>
         

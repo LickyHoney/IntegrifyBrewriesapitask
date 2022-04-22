@@ -27,8 +27,14 @@ body{font-family:'Open Sans',sans-serif;font-size:18px;color:#363738;font-weight
     margin: 2rem;
   }
 
+  .card-title{
+    margin: 2rem;
+    justify-content: center;
+  }
+
   .card-list-detail{
    margin : 5rem;
+   justify-content: center;
   }
 
   .search-container {
