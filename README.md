@@ -12,6 +12,9 @@ npm install
 # To run the project
 npm start
 
+# Netlify Link
+https://frolicking-pavlova-7b2f65.netlify.app/
+
 
 
 
